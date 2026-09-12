@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+<title>Chud Zone</title>
+<meta name="description" content="Autoregulated hypertrophy training log." />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#0A0A0B" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Chud Zone" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="icon" href="icon-192.png" />
+<style>
+  html, body { margin: 0; padding: 0; background: #0A0A0B; height: 100%; overscroll-behavior: none; }
+  #root { height: 100%; }
+  body { -webkit-user-select: none; user-select: none; }
+  input, select, textarea { -webkit-user-select: text; user-select: text; }
+</style>
+<script>
+/* Storage shim: the app talks to window.storage; on your phone that is localStorage. */
+(function () {
+  function safe(fn, fallback) { try { return fn(); } catch (e) { return fallback; } }
+  window.storage = {
+    get: function (key) {
+      var v = safe(function () { return localStorage.getItem('platelog:' + key); }, null);
+      return Promise.resolve(v === null ? null : { key: key, value: v, shared: false });
+    },
+    set: function (key, value) {
+      safe(function () { localStorage.setItem('platelog:' + key, value); });
+      return Promise.resolve({ key: key, value: value, shared: false });
+    },
+    delete: function (key) {
+      safe(function () { localStorage.removeItem('platelog:' + key); });
+      return Promise.resolve({ key: key, deleted: true, shared: false });
+    },
+    list: function (prefix) {
+      var keys = safe(function () {
+        return Object.keys(localStorage)
+          .filter(function (k) { return k.indexOf('platelog:') === 0; })
+          .map(function (k) { return k.slice(9); })
+          .filter(function (k) { return !prefix || k.indexOf(prefix) === 0; });
+      }, []);
+      return Promise.resolve({ keys: keys, prefix: prefix, shared: false });
+    }
+  };
+})();
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
