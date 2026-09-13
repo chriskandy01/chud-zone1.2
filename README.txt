@@ -1,4 +1,4 @@
-CHUD ZONE 6.1.1 — getting it onto your phone
+CHUD ZONE 6.2.0 — getting it onto your phone
 ======================================
 
 What's in this folder (this IS the whole app):
