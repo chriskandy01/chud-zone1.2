@@ -15,6 +15,49 @@
 <link rel="icon" href="icon-192.png" />
 <style>
   html, body { margin: 0; padding: 0; background: #0A0A0B; height: 100%; overscroll-behavior: none; }
+
+  /* --- splash --- */
+  #cz-boot {
+    position: fixed; inset: 0; z-index: 999;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: #0A0A0B;
+    transition: opacity 420ms ease, visibility 420ms;
+  }
+  #cz-boot.cz-gone { opacity: 0; visibility: hidden; pointer-events: none; }
+  .cz-boot-mark {
+    opacity: 0; transform: scale(0.82) translateY(6px);
+    animation: czMarkIn 620ms cubic-bezier(.18,.82,.3,1) 60ms forwards;
+  }
+  .cz-boot-word {
+    margin-top: 20px;
+    font-family: 'Barlow Semi Condensed', 'Arial Narrow', system-ui, sans-serif;
+    font-size: 30px; font-weight: 700; color: #F2EFEF;
+    letter-spacing: 16px; text-indent: 16px;
+    opacity: 0;
+    animation: czWordIn 760ms cubic-bezier(.18,.82,.3,1) 260ms forwards;
+  }
+  .cz-boot-rule {
+    margin-top: 16px; height: 2px; width: 0; background: #E02B2B; border-radius: 2px;
+    animation: czRuleIn 560ms cubic-bezier(.18,.82,.3,1) 520ms forwards;
+  }
+  @keyframes czMarkIn {
+    0%   { opacity: 0; transform: scale(0.82) translateY(6px); }
+    60%  { opacity: 1; transform: scale(1.04) translateY(0); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  @keyframes czWordIn {
+    0%   { opacity: 0; letter-spacing: 16px; text-indent: 16px; }
+    100% { opacity: 1; letter-spacing: 3.4px; text-indent: 3.4px; }
+  }
+  @keyframes czRuleIn {
+    0%   { width: 0; opacity: 0; }
+    100% { width: 132px; opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cz-boot-mark, .cz-boot-word, .cz-boot-rule { animation-duration: 1ms !important; animation-delay: 0ms !important; }
+    .cz-boot-word { opacity: 1; letter-spacing: 3.4px; }
+    .cz-boot-mark { opacity: 1; transform: none; }
+  }
   #root { height: 100%; }
   body { -webkit-user-select: none; user-select: none; }
   input, select, textarea { -webkit-user-select: text; user-select: text; }
@@ -50,12 +93,44 @@
 </script>
 </head>
 <body>
+<div id="cz-boot" aria-hidden="true">
+  <div class="cz-boot-mark"><svg width="92" height="92" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g fill="#E02B2B"><g transform="translate(256.0 382.0) rotate(30) scale(1.0)"><rect x="-130" y="-13" width="260" height="26" rx="13"/><rect x="-134" y="-37" width="27" height="74" rx="11"/><rect x="107"  y="-37" width="27" height="74" rx="11"/><rect x="-182" y="-50" width="36" height="100" rx="14"/><rect x="146"  y="-50" width="36" height="100" rx="14"/></g><g transform="translate(256.0 382.0) rotate(-30) scale(1.0)"><rect x="-130" y="-13" width="260" height="26" rx="13"/><rect x="-134" y="-37" width="27" height="74" rx="11"/><rect x="107"  y="-37" width="27" height="74" rx="11"/><rect x="-182" y="-50" width="36" height="100" rx="14"/><rect x="146"  y="-50" width="36" height="100" rx="14"/></g></g><path d="M 256.0 34.0 C 168.0 34.0 120.0 100.0 120.0 176.0 C 120.0 222.0 137.0 256.0 160.0 278.0 L 160.0 308.0 C 160.0 324.0 172.0 336.0 188.0 336.0 L 324.0 336.0 C 340.0 336.0 352.0 324.0 352.0 308.0 L 352.0 278.0 C 375.0 256.0 392.0 222.0 392.0 176.0 C 392.0 100.0 344.0 34.0 256.0 34.0 Z" fill="none" stroke="#0A0A0B" stroke-width="26.0" stroke-linejoin="round"/><path d="M 256.0 34.0 C 168.0 34.0 120.0 100.0 120.0 176.0 C 120.0 222.0 137.0 256.0 160.0 278.0 L 160.0 308.0 C 160.0 324.0 172.0 336.0 188.0 336.0 L 324.0 336.0 C 340.0 336.0 352.0 324.0 352.0 308.0 L 352.0 278.0 C 375.0 256.0 392.0 222.0 392.0 176.0 C 392.0 100.0 344.0 34.0 256.0 34.0 Z" fill="#E02B2B"/><g fill="#0A0A0B"><ellipse cx="207.0" cy="176.0" rx="38.0" ry="44.0" transform="rotate(-9 207.0 176.0)"/><ellipse cx="305.0" cy="176.0" rx="38.0" ry="44.0" transform="rotate(9 305.0 176.0)"/><path d="M 256.0 218.0 L 282.0 264.0 L 230.0 264.0 Z"/><rect x="160.0" y="282.0" width="192.0" height="12.0" rx="6.0"/><rect x="204.0" y="290.0" width="12.0" height="46.0" rx="5.0"/><rect x="232.0" y="290.0" width="12.0" height="46.0" rx="5.0"/><rect x="260.0" y="290.0" width="12.0" height="46.0" rx="5.0"/><rect x="288.0" y="290.0" width="12.0" height="46.0" rx="5.0"/></g></svg></div>
+  <div class="cz-boot-word">CHUD ZONE</div>
+  <div class="cz-boot-rule"></div>
+</div>
 <div id="root"></div>
 <script src="app.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () {});
+    navigator.serviceWorker.register('sw.js').then(function (reg) {
+      function watch(worker) {
+        if (!worker) return;
+        worker.addEventListener('statechange', function () {
+          if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+            window.__chudUpdateReady = true;
+            window.dispatchEvent(new Event('chud-update'));
+          }
+        });
+      }
+      if (reg.waiting && navigator.serviceWorker.controller) {
+        window.__chudUpdateReady = true;
+        window.dispatchEvent(new Event('chud-update'));
+      }
+      watch(reg.installing);
+      reg.addEventListener('updatefound', function () { watch(reg.installing); });
+      setInterval(function () { reg.update().catch(function () {}); }, 30 * 60 * 1000);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') reg.update().catch(function () {});
+      });
+    }).catch(function () {});
+
+    var reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (reloading) return;
+      reloading = true;
+      window.location.reload();
+    });
   });
 }
 </script>

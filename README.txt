@@ -1,4 +1,4 @@
-CHUD ZONE — getting it onto your phone
+CHUD ZONE 6.1.1 — getting it onto your phone
 ======================================
 
 What's in this folder (this IS the whole app):
@@ -82,28 +82,41 @@ USING IT
 ---------
 First launch walks you through units, experience level and picking a split.
 
-TODAY     Pick the day you're training. Each muscle expands to show its
-          movements, sets, target weight, rep range, and what you did last
-          time. Tap the check by a set to start the rest timer. Answer
-          reps-in-reserve, pump and joint pain per movement, soreness per
-          muscle. Nothing is fixed: Change swaps a movement, Add tacks one
-          on, and "Train something else today" pulls in an unscheduled
-          muscle. There's a session note field and an undo button.
+TODAY     Three stages, in order.
+          PLAN — pick the day, then pick the movements you actually want
+          for each muscle. Sets and weights are pre-filled from your last
+          session or the coach's suggestion; change any of it. Then hit
+          Start.
+          WORKOUT — a separate full-screen view, one movement at a time,
+          with a strip along the top to jump between them. Tabs and nav get
+          out of the way. Swap a movement or add a set mid-session. Reps in
+          reserve, pump and joint pain are asked per movement, right after
+          you finish it. Hit End when you're done.
+          SUMMARY — sets, reps, weight moved, any personal bests, and what
+          the coach changed for next time.
+          A CHECK-IN appears at the top of Plan a day or two after a
+          session, asking how sore that training left you. That is what
+          moves your weekly volume, because soreness peaks well after you
+          train rather than right before the next session.
 LOG       Anything outside the plan. Does not feed the coach.
-STATS     Progress (overlay up to 5 movements on one chart), Volume
-          (weekly sets vs your floor and ceiling), Calendar (18-week
-          consistency grid, streak, personal bests) and History (searchable,
-          editable).
-SETTINGS  A menu: Your split, Movements, Training rules, Gym setup,
-          Preferences, Your data, How this works.
+STATS     Progress (overlay up to 5 movements), Volume, Cardio, Calendar
+          and History.
+SETTINGS  A menu: Your split, Movements, Appearance (six accent colours,
+          true-black option), Training rules, Gym setup, Preferences, Your
+          data, How this works.
 
-Your session autosaves as you type, so a locked screen or a killed tab
-costs you nothing.
+ODDS AND ENDS
+--------------
+  * Hold the + or - on any number field to run it up fast.
+  * Long-press the home screen icon for Start workout / Log cardio / Stats.
+  * "Repeat my last session" reloads your previous workout as a starting
+    point.
+  * Setup notes per movement (seat height, pin, grip) show while you train.
+  * Warm-up ramps are suggested on your first set. Never logged, never
+    counted as volume.
+  * Deleting a session leaves an Undo strip for a few seconds.
+  * Share a finished session as text, or export everything to CSV.
+  * Stats > Balance shows your push/pull/legs split and flags a lopsided
+    ratio.
+  * Milestones and a seven-day recap live in Stats.
 
-
-UPDATING THE APP LATER
------------------------
-Re-upload the changed files to the same host. The service worker caches
-aggressively, so bump the version string at the top of sw.js (change
-'chud-zone-v1' to 'chud-zone-v2') whenever you change app.js — otherwise
-phones will keep serving the old cached copy.
