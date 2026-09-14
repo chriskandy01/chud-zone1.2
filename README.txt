@@ -90,6 +90,12 @@ on, and it shows up while you're training.
 It suggests a warm-up ramp on your first set. Those aren't logged and don't
 count toward volume.
 
+Swipe a set row left while you're training to bin it. Handy when you
+realise you've been logging leg curls under leg extensions.
+
+Hold the dots beside a movement on the plan screen and slide to reorder
+them.
+
 Delete a session by mistake and there's an undo for a few seconds.
 
 You can share a finished session as text or dump everything to a CSV.
