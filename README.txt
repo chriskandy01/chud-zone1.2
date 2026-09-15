@@ -77,6 +77,13 @@ your gym actually has, and backups.
 SMALLER THINGS WORTH KNOWING
 ----------------------------
 
+Myo-reps are there if you want them. Hit the button next to the set count
+on any movement and it turns into one activation set of 12 to 20 near
+failure, then mini-sets of 3 to 5 off about 20 seconds rest. The minis use
+the activation weight automatically. The whole cluster counts as one set of
+volume, because that's what it is, and only the activation set feeds your
+progression and your estimated 1RM.
+
 Hold the plus or minus on any number to run it up fast.
 
 Long press the app icon for start workout, log cardio, or stats.
