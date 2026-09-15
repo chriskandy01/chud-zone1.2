@@ -112,13 +112,34 @@ YOUR DATA
 It sits on your phone in that browser's storage. Nothing syncs, so your
 phone and your computer would be separate logs.
 
-Clearing Chrome's site data wipes it. So does uninstalling. So go to
-Settings > Your data and save a backup every few weeks. It's a small file
-that lands in Downloads and restores on any device.
+The app keeps its own recovery points, one a day, five at a time. If
+something goes wrong you can roll back from Settings > Your data. Those
+live in the same storage as everything else though, so they survive a bad
+update or a mistaken wipe but not Chrome's site data being cleared.
 
-The other thing that wipes it is moving the app to a different web
-address, because the storage is tied to the exact URL. Pick one before you
+For that you need a downloaded backup. The home screen nags you once a day
+until you tap it, and you can change that to weekly, monthly or never.
+
+A browser genuinely can't save a file on a timer. Downloads need a tap
+every time, and there's no way for a web app to overwrite a file already
+sitting in your Downloads folder. So one tap a day is as automatic as this
+gets. The file is small and the old ones do no harm.
+
+The other thing that wipes everything is moving the app to a different web
+address, because storage is tied to the exact URL. Pick one before you
 share it around and stay there.
+
+
+MISSED A SESSION
+----------------
+
+On the train tab there's a session date above the movements. Set it back
+and whatever you log saves under that day instead of today.
+
+It still updates your weights, so if you're rebuilding after losing data,
+put the oldest session in first and work forward. Anything more than three
+days old won't ask you for a soreness check-in, since that answer would be
+meaningless by then.
 
 
 UPDATING IT
