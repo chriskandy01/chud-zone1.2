@@ -133,8 +133,12 @@ share it around and stay there.
 MISSED A SESSION
 ----------------
 
-On the train tab there's a session date above the movements. Set it back
-and whatever you log saves under that day instead of today.
+On the train tab, hit "Another day" under the movement list and pick a
+date. Whatever you log saves under that day instead of today.
+
+If you just forgot a movement, go to Stats > History, hit Edit on the
+session and add it there. You can add sets, add movements from any muscle
+group, or bin one. Editing history doesn't change your coaching numbers.
 
 It still updates your weights, so if you're rebuilding after losing data,
 put the oldest session in first and work forward. Anything more than three
