@@ -4,7 +4,7 @@
       until the app asks, so nobody gets half-old code mid-workout.
    2. Nothing in here touches localStorage, so updates cannot cost anyone
       their training log. */
-var CACHE = 'chud-zone-6.7.0';
+var CACHE = 'chud-zone-6.7.1';
 var SHELL = ['./', './index.html', './app.js', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', function (e) {

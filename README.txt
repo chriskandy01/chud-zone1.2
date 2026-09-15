@@ -96,7 +96,8 @@ realise you've been logging leg curls under leg extensions.
 Hold the dots beside a movement on the plan screen and slide to reorder
 them.
 
-Delete a session by mistake and there's an undo for a few seconds.
+Anything destructive asks first. Sessions also keep an undo for a few
+seconds after they're gone.
 
 You can share a finished session as text or dump everything to a CSV.
 
@@ -135,6 +136,10 @@ MISSED A SESSION
 
 On the train tab, hit "Another day" under the movement list and pick a
 date. Whatever you log saves under that day instead of today.
+
+Logging a missed day also moves your split along, so if you fill in
+yesterday's upper day, today shows the next one. Filling in something older
+than your last session leaves the rotation where it is.
 
 If you just forgot a movement, go to Stats > History, hit Edit on the
 session and add it there. You can add sets, add movements from any muscle
